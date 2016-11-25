@@ -1,0 +1,6 @@
+# CREATED BY ULibM
+
+Options +FollowSymlinks
+RewriteEngine on
+RewriteRule ^([^/]*)$ /ULIB6/index.php?deftab=4&webboxload=yes&title=$1
+
