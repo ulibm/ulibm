@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Countdown Examples 2</title>
+
+<!-- =========================================================== -->
+<!-- COUNTDOWN NOTE: 
+		When using more than one Countdown, 
+		we recommend placing a reference 
+		to the script once in HEAD -->
+<!-- =========================================================== -->
+<script src="countdown.js" type="text/javascript"></script>
+
+
+
+</head>
+<body style="background-color:#EDEDED">
+
+
+
+
+<!-- =========================================================== -->
+<p>Example 1 (flip clock)</p>
+<!-- =========================================================== -->
+<script type="application/javascript">
+var myCountdown1 = new Countdown({
+								 	time: 86400 * 3, // 86400 seconds = 1 day
+									width:300, 
+									height:60,  
+									rangeHi:"day",
+									style:"flip"	// <- no comma on last item!
+									});
+
+</script>
+
+
+
+<!-- =========================================================== -->
+<p>Example 2 (show only min and sec)</p>
+<!-- =========================================================== -->
+<script type="application/javascript">
+var myCountdown2 = new Countdown({
+									time: 300, 
+									width:300, 
+									hideLine	: true,
+									height:80, 
+									rangeHi:"hour"	// <- no comma on last item!
+									});
+
+</script>
+

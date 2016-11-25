@@ -1,0 +1,15 @@
+<?php 
+;
+include("../inc/config.inc.php");
+head();
+include("_REQPERM.php");
+mn_lib();
+
+?><CENTER><iframe width='<?php  echo $_TBWIDTH?>' height=700 src="manpos.iframe.php?id=<?php  echo $id; ?>"></iframe>
+<BR>
+<B>
+<A HREF="sub.php?id=<?php  echo $id;?>" class=a_btn><?php  echo getlang("กลับ::l::Back");?></A>
+</B></CENTER><?php 
+
+foot();
+?>
