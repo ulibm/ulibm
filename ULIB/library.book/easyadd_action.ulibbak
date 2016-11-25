@@ -1,0 +1,121 @@
+<?php
+	; 
+		
+        include ("../inc/config.inc.php");
+		head();
+	 include("_REQPERM.php");
+        mn_lib();
+
+sessionval_set("lastrestourcetypeitem",$RESOURCE_TYPE);
+sessionval_set("lastrestourceplaceitem",$itemplace);
+
+pagesection(getlang("คีย์รายการใหม่แบบง่าย::l::Easy Key new"));
+//print_r($_POST);
+?>
+
+<CENTER><?
+$status="";
+$itemplace=$itemplace;
+$isbc="on";
+$libsite=$FLIBSITE;
+$itemtype=$RESOURCE_TYPE;
+$bcsep_field=",";
+$importid="EasyAddForm";
+
+$Stime=time();
+$i=0;
+$e=0;
+$itemadded=1;
+$resultmap_fid=tmq_dump("easyadd_map","classid","fid");;
+$resultmap_tp=tmq_dump("easyadd_map","classid","tp");;
+$resultdata=Array();
+//print_r($_POST);
+//print_r($resultmap_fid);
+//echo "<BR><BR><BR>";
+
+	$r[SPACE]=" ";
+	$r['EMPTY']="";
+	reset($resultmap_tp);
+	reset($resultmap_fid);
+	$res="";
+	$sumstr="";
+	$barcodeid="";
+	foreach ($resultmap_fid as $k=> $v) {
+		$thisv="";
+		eval("\$thisv=\"\$$k\" ;");
+		//echo("\$thisv=\"\$$k\" ;");
+		$meltedvalue="$thisv";
+		//echo("[$k,meltedvalue=$meltedvalue];<BR>");
+		$meltedvalue=addslashes($meltedvalue);
+		//echo "[$meltedvalue]<BR>";
+		if ($k=='ITEMBARCODE') {
+			//echo("[$k,meltedvalue=$thisv$meltedvalue];<BR>");echo "CCCCCC$meltedvalue<BR>";
+			$barcodeid=$meltedvalue;
+			$barcodeid=addslashes($barcodeid);
+			continue;
+		}
+		//echo "CCCCCC$resultmap_tp[$k]<BR>";
+		$resutlval=str_replace("[data]","$meltedvalue",$resultmap_tp[$k]);
+		$resultval=addslashes("$resultval");
+		//echo "CCCCCC$resutlval<BR>";
+		$res="$res  $resultmap_fid[$k] ='$resutlval'  ,";
+		$sumstr="$sumstr$resutlval";
+	}
+
+	$i++;
+	if (trim($sumstr)=="") {
+		echo getlang("รายการที่ $i ไม่ถูกนำเข้า, ข้อมูลเป็นค่าว่าง::l::Record No. $i cannot import, Empty data.")."<BR>";
+	} else {
+	//echo "[$r[$name2]$name]";
+
+		$sql="insert into media set
+		$res
+		importid='$importid'
+		";
+		//echo $sql;
+		//die;
+		tmq($sql);
+		$pid=tmq_insert_id();
+		if ($isbc=="on") {
+			if ($barcodeid!="") {
+			echo "asdfd";
+			printr($barcodeid);
+				$barcodeid=explode($bcsep_field,$barcodeid); 
+				reset($barcodeid);
+				foreach ($barcodeid as $barcodeidk=>$barcodeidv) {
+
+					$barcodeidv=str_remspecialsign($barcodeidv);
+					$barcodeidv=trim($barcodeidv);
+
+					if ($barcodeidv!="") {
+						$cccb=tmq("select * from media_mid where bcode='$barcodeidv'");
+						if (tmq_num_rows($cccb)==0) {
+							$bitemsql="insert into media_mid set
+							RESOURCE_TYPE='$itemtype' ,
+							pid='$pid' ,
+							bcode='$barcodeidv' ,
+							status='$status' ,
+							libsite='$libsite' ,
+							
+							place='$itemplace' ";
+							if ($itemadded!=1) {
+								$bitemsql.=",inumber='ฉ. $itemadded' ";
+							}
+							tmq($bitemsql,false);
+							$itemadded++;
+						}
+					}
+				}
+			}
+		}
+	}
+
+$Etime=time();
+
+?></CENTER>
+<BR><CENTER><? echo getlang("บันทึกข้อมูลสำเร็จ::l::Success"); ?> </CENTER>
+
+<? 
+redir("easyadd.php");
+foot();
+?>

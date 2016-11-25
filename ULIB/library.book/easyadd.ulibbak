@@ -1,0 +1,104 @@
+<?php
+	; 
+        include ("../inc/config.inc.php");
+		head();
+	 include("_REQPERM.php");
+        mn_lib();
+				?><script>
+				startrunning=1
+				</script><?
+			pagesection(getlang("คีย์รายการใหม่แบบง่าย::l::Easy Key new"));
+//echo $fpath;
+function local_form($wh,$maxlen) {
+	?>
+	<INPUT TYPE="text" NAME="<? echo $wh;?>" autocomplete=off
+	<?
+	if ($maxlen<50) {
+		echo "size=$maxlen maxlength=$maxlen";
+	} else {
+		echo "size=50";
+	}
+		echo " maxlength=$maxlen";
+	if ($wh=="tag008") {
+		echo " value=".(date("Y")+543)."";
+	}
+	?>>
+<?
+}
+
+?>
+<BR>
+<TABLE align=center width=780 class=table_border>
+<FORM METHOD=POST ACTION="easyadd_action.php">
+		<tr>
+			<td>
+				<? echo getlang("ประเภทวัสดุ::l::Material type"); ?></td>
+			<td><?
+			$defrestype=getval("config","defaultresource_code");
+			$defrestypesess=sessionval_get("lastrestourcetypeitem");
+			if ($defrestypesess!="") {
+				 $defrestype=$defrestypesess;
+			}
+			frm_restype("RESOURCE_TYPE", $defrestype);
+			?></td></tr>
+		  <tr>
+			<td>
+				<? echo getlang("วัสดุของห้องสมุด::l::At Library campus"); ?></td>
+			<td><?
+			frm_libsite("FLIBSITE");
+		?></td></tr>
+<tr>
+<td>
+	<? echo getlang("สถานที่จัดเก็บ::l::Shelve"); ?></td>
+<td>
+<?
+//print_r($editing);
+$defresplacesess=sessionval_get("lastrestourceplaceitem");
+frm_itemplace("itemplace",$defresplacesess);
+?>
+</td></tr>
+<tr>
+<td colspan=2 align=center>
+<? echo getlang("แยกบาร์โค้ดแต่ละอันด้วยเครื่องหมายคอมม่า::l::Seperate each barcode with comma");?>
+</td></tr>
+<?
+$maps=tmq("select * from easyadd_map where  (tp like '%[data]%' ) order by focus desc,ordr,fid");
+while ($smap=tmq_fetch_array($maps)) {
+	?>
+<TR valign=top>
+	<TD class=table_td><? 
+	if ($smap[focus]=="yes") {
+		echo "<B style='color: #333300'>";
+	}
+	echo getlang($smap[name]); ?> [<? echo getlang($smap[classid]); ?>]</TD>
+	<TD><?
+	if ($smap[classid]=="ITEMBARCODE") {
+	?><TABLE cellpadding=0 cellspacing=0 width=100%>
+	  <TR valign=top>
+		<TD><input type = text name = "ITEMBARCODE" autocomplete=off value = ""
+		 onblur="getobj('bcchecker').src='bccheck.php?bc='+this.value;"
+		 onkeyup="getobj('bcchecker').src='bccheck.php?bc='+this.value;"
+		  onkeydown="return localbckeydown(event,this);"
+		></TD>
+		<TD><?
+		$_bcjsfunc_skipmulti="yes";
+		include("local.bcjsfuncsmall.php");?><iframe src="" width=300 height=100 frameborder=0 SCROLLING=NO ID='bcchecker'></iframe></TD>
+	  </TR>
+	  </TABLE><?
+	} else {
+		local_form($smap[classid],$smap[maxlen]);
+	}?></TD>
+</TR>
+	<?
+}
+?>
+<TR>
+	<TD colspan=2 align=center><BR><INPUT TYPE="submit" value="  Submit  "> 
+	<A HREF="DBbook.php" class=a_btn><B><? echo getlang("กลับ::l::Back");?></B></A>
+	</TD>
+</TR>
+</FORM>
+</TABLE>
+<BR><BR>
+<? foot();
+?>
