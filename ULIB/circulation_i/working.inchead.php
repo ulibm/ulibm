@@ -1,0 +1,3 @@
+<?php // พ
+$isatcirculation="no";
+?>
