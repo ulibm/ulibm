@@ -1,0 +1,3 @@
+<?php 
+//  install to database
+?>

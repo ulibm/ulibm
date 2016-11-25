@@ -1,0 +1,19 @@
+<pre>running for ULIBM61 - พฤหัสบดี
+   Executinged: ULIBM61-2014-51-4-backup 
+   Executinged: ULIBM61-2014-51-4-due_3dbefore 
+   Executinged: ULIBM61-2014-51-4-due_2dbefore 
+   Executinged: ULIBM61-2014-51-4-due_1dbefore 
+   Executinged: ULIBM61-2014-51-4-due 
+   Executinged: ULIBM61-2014-51-4-overdue 
+running for PSRUP01 - พฤหัสบดี
+running for ULIBM07 - พฤหัสบดี
+   Executinged: ULIBM07-2014-51-4-backup 
+   Executinged: ULIBM07-2014-51-4-due_3dbefore 
+   Executinged: ULIBM07-2014-51-4-due_2dbefore 
+   Executinged: ULIBM07-2014-51-4-due_1dbefore 
+   Executinged: ULIBM07-2014-51-4-due 
+   Executinged: ULIBM07-2014-51-4-overdue 
+   Executinged: ULIBM07-2014-51-4-unpaidfine 
+   Executinged: ULIBM07-2014-51-4-memexpiredate7days 
+   Executinged: ULIBM07-2014-51-4-memexpiredate30days 
+   Executinged: ULIBM07-2014-51-4-memexpiredate30daysafter 
