@@ -1,0 +1,137 @@
+<?
+    ;
+	include ("../inc/config.inc.php");
+	head();
+	$_REQPERM="holdlong";
+	mn_lib();
+   
+  ?>  
+
+
+
+ <br />
+<br />
+
+<table align=center><form name="form1" action="holdlong.php" method="GET" >
+<tr><td> <img src="../image/search.gif" width="18" height="15" hspace="4"> <? echo getlang("ระบุจำนวนวันที่ต้องการให้แสดง::l::Specify day number to show");?> <INPUT TYPE="text" NAME="typeid" onkeypress="return numbersonly()"
+value='<? echo $typeid;?>' size=5> <input type="submit" name="<? echo getlang("ตกลง::l::Submit");?>" 
+value="<? echo getlang("ตกลง::l::Submit");?>">
+                <input type="hidden" name="sid" value="<? echo $sid;?>"></td></tr>
+</form>
+</table>
+<?
+      if (empty($page)){
+        $page=1;
+    }
+	$typeid=$typeid-1; //น้อยกว่าหรือเท่ากับ
+    // หาจำนวนหน้าทั้งหมด
+  $sql1 ="SELECT *  FROM checkout where 1 ";
+if ($keyword <> "on") { 
+    $sql1= "$sql1 and (returned ='no')"; 
+  } 
+    $sql2 = "$sql1 order by hold"; // limit $goto,$list_page";
+    $result = tmq($sql2);
+    $NRow = tmq_num_rows($result);
+    if($NRow >0) {  
+?>
+                <table width="<? echo $_TBWIDTH?>" align=center class=table_border border="0" cellspacing="1" 
+cellpadding="3" bgcolor=#F9EA9F> 
+                  <tr bgcolor="#A27100"> 
+                    <td width="5%"  class=table_head><nobr><? echo getlang("ลำดับที่::l::No.");?></td> 
+                    <td width="13%" align=center class=table_head><nobr><? echo getlang("รหัสสมาชิกที่ยืม::l::Member ID");?></td>
+                    <td class=table_head><? echo getlang("บาร์โค้ดวัสดุ-ชื่อเรื่อง::l::Barcode-Title");?></td>
+                    <td class=table_head><nobr><? echo getlang("วันยืม / วันส่ง::l::Hold date/Return date");?></td>                    
+<td class=table_head><nobr><? echo getlang("จำนวนวันที่เกิน/ค่าปรับ::l::Overdue/Fine");?></td>
+
+                  </tr> 
+                  <? 
+       $icount=1;
+		$i=1;  
+         while($row = tmq_fetch_array($result)){ 
+      $memberId = $row[memberId]; 
+$id =$row[id]; 
+  $mediaId  = $row[mediaId]; 
+  $hold = $row[hold];
+  $request = $row[request];
+  $returned = $row[returned];
+  $sdat = $row[sdat];
+  $smon = $row[smon];
+  $syea = $row[syea];
+  $edat = $row[edat];
+  $emon = $row[emon];
+  $eyea = $row[eyea];
+  $mdname = $row[mediaName];
+  $xfine = $row[fine];
+$shld=GregorianToJD2(date("n"),date("j"),date("Y")+543);
+
+$ehld=GregorianToJD2($emon,$edat,$eyea);
+$holdr= $ehld-$shld;
+//echo $holdr . ($holdr<=7);
+$tidd=($typeid);
+if ($holdr<-$tidd) {
+                    $ittt = ($startrow)+$i; 
+		if ($i%2==0) {
+			  echo "<tr bgcolor=#FFF1BB valign=top> "; 
+		} else {
+			  echo " <tr bgcolor=#FFFFFF valign=top> "; 
+		}
+		
+		
+	$sql3 ="SELECT *  FROM member where UserAdminID='$hold'";  
+//echo $sql3; 
+  $result3 = tmq($sql3);  
+$row3 = tmq_fetch_array($result3);  
+$Uid = $row3[UserAdminID];
+$Uname = $row3[UserAdminName];
+$Uemail  = $row3[email];
+//echo $tmp;
+          $strtype= $row3[show];  
+        // echo "$strtype ";  
+            echo "<td  class=table_td>$ittt</td>"; 
+            echo "<td class=table_td>".get_member_name($hold)."</td>";   
+             echo "<td class=table_td>";
+			 $chk=tmq("select * from media where ID='$row[pid]' ");
+if (tmq_num_rows($chk)!=0) {			 
+	echo " <A HREF='../dublin.php?ID=$row[pid]&item=$row[mediaId]' target=_blank>";
+} else {
+	echo "<I>Bib not found,</I> ";
+}
+
+echo ($row[mediaName])."</A></td>";   
+						 echo "<td class=table_td><nobr>  $sdat " . $thaimonstr[$smon] . " $syea /</nobr><br />
+	  $edat " . 
+					  $thaimonstr[$emon] . " $eyea " .  "<!-- $mID --></font></td>";   
+   if ($holdr>=1) {
+    $holdr="<FONT SIZE=2 COLOR=black>$holdr</FONT>";
+} else {
+    $holdr="<FONT SIZE=2 COLOR=red><B>".getlang("เกินกำหนด::l::Overdue")." ".number_format(-$holdr) ." ".getlang("วัน::l::Day")."</B><BR> ".getlang("ปรับ::l::Fine")." " . 
+number_format(-$holdr*$xfine). " ".getlang("บาท::l::Baht")."</FONT>";
+}
+                  echo "<td class=table_td><font face='MS Sans Serif' size=2>  $holdr <!-- $mID --></font></td>";   
+//echo "<td><font face='MS Sans Serif' size=2>  $request / $returned</font></td>";   
+
+		 
+		 $i2 = $i2 +1; 
+   echo "</td>"; 
+					$i++; 
+					$s = $i-1; 
+
+           echo "</tr>"; 
+		      $icount++;
+	} //จบหากค้างส่งมากกว่า 7 วัน	   
+}
+
+if ($icount==1) {
+echo "<tr bgcolor=white><td colspan=10 align=center> - ".getlang("ไม่พบข้อมูล::l::No record found")." - </td></tr>";
+}
+ ?> 
+                </table> 
+<? 
+	} 
+?> 
+</td> 
+</tr> 
+</table> 
+<?
+foot();
+?>
