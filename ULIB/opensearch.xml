@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns:moz="http://www.mozilla.org/2006/browser/search/" 
+      xmlns="http://a9.com/-/spec/opensearch/1.1/">
+  <ShortName>ShortName</ShortName>
+  <Description>Search LibraryName</Description>
+    <OutputEncoding>TIS-620</OutputEncoding>
+    <InputEncoding>TIS-620</InputEncoding>
+  <Url method="GET" type="text/html" template="http://localhost:8080/ULIB6/searching.php?KW={searchTerms}"/>
+  <Image height="16" width="16" type="image/png">http://localhost:8080/ULIB6/neoimg/ulibfavicon.png</Image>
+
+</OpenSearchDescription>

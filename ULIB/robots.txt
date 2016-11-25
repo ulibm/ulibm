@@ -1,0 +1,12 @@
+User-agent: * 
+Disallow: /ULIB/*.sql$ 
+Disallow: /ULIB/*.js$ 
+Disallow: /ULIB/*.inc$ 
+Disallow: /ULIB/*.css$ 
+Disallow: /ULIB/*.txt$ 
+Disallow: /ULIB/library.*
+Disallow: /ULIB/root.*
+Disallow: /ULIB/library/
+Disallow: /ULIB/root/
+
+sitemap: http://www.ulibm.net/ULIB/sitemap.xml
