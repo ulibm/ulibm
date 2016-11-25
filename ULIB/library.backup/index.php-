@@ -1,0 +1,208 @@
+<?php 
+;
+set_time_limit (600);
+
+include("../inc/config.inc.php");
+$now=time();
+
+if ($push=='yes' && barcodeval_get("activateulib-status")=="registered") {
+	if (!file_exists("../_output/backup-libbackup.sql.gz")) {
+		die;
+	}
+	html_start();
+	?><style>
+	BODY {
+		background-color: #FFF3CE;
+	}	
+	</style><?php 
+	echo "<BR><CENTER><img src='../neoimg/upload-32.png' align=absmiddle> <A HREF='".getval("SYSCONFIG","ulibmasterurl")."/activateulib/bkpush/index.php?certid=".barcodeval_get("activateulib-refcode")."'>Push to <B>ULibM Central</B></A></CENTER>";
+	die;
+}
+
+$_REQPERM="fullbackup";
+head();
+mn_lib("fullbackup");
+
+$bktype="libbackup";
+?>
+
+
+<BR><BR><BR><BR>
+	<TABLE width=650 align=center>
+	<TR>
+		<TD><div style="width: 650px; height: 300px; display:block; overflow:scroll;" ID=datadspdiv>
+<script>
+function localautoscroll() {
+   elem = getobj('datadspdiv');
+   elem.scrollTop = elem.scrollHeight;
+}
+var autoscrolltimeout=setInterval("localautoscroll();",100);
+</script>
+
+<?php 
+
+
+sleep(1);
+
+barcodeval_set("lastbackup-light-date",time());
+barcodeval_set("lastbackup-MAX-date",time());
+filelogs("Operate Backup By library",thaidatestr(time()),"BACKUPLOG-$bktype");
+$bkfilename="backup-$bktype.sql";
+    flush();
+
+    $path="../_output/";
+
+    if (!is_dir($path))
+
+        mkdir($path, 0777);
+
+    chmod($path, 0777);
+
+    if (file_exists($path . "$bkfilename"))
+
+        {
+
+		unlink($path . "$bkfilename");
+        }
+
+
+
+        $cur_time=date("Y-m-d H:i");
+
+        $tables=tmq_list_tables();//tmq("show tables");
+
+		echo tmq_error();
+        $num_tables=tmq_num_rows($tables);
+		//echo "num_tables=$num_tables;";
+			$forceskipdb=getval("_SETTING","backup-forceskip");
+			$forceskipdborig=$forceskipdb;
+			$forceskipdb=explodenewline($forceskipdb);
+
+			$stagdeloldtablewhenskip="YES";
+			$skipdb="";//getval("_SETTING","backup-skip");
+			$skipdborig=$skipdb;
+			$skipdb=explodenewline($skipdb);
+
+		//print_r($forceskipdb);
+        $i=0;
+
+        while ($i < $num_tables)
+            {
+
+			$newfile="";
+            $table = tmq_tablename($tables, $i);
+
+            $i++;
+
+			echo "<IMG SRC='../neoimg/Green.gif' WIDTH='16' HEIGHT='16' BORDER='0' ALT='' align=absmiddle> Operating ... $table";
+			if (in_array ($table,$skipdb) || in_array ($table,$forceskipdb)) {
+				echo " <I style='color: #990000'>skip</I>.<BR>";
+				$newfile.=get_def($dbname, $table, "$stagdeloldtablewhenskip");
+				$newfile.="\n\n";
+				fso_file_write($path . "$bkfilename","a",$newfile);
+				continue;
+			}
+            $newfile.=get_def($dbname, $table);
+
+            $newfile.="\n\n";
+
+            $newfile.=get_content($dbname, $table);
+
+            $newfile.="\n\n";
+
+			fso_file_write($path . "$bkfilename","a",$newfile);
+			echo " <I style='color: darkgreen'>done</I>.<BR>";
+			}
+
+?>
+</div>
+</TD>
+	</TR>
+	</TABLE>
+    <CENTER>
+
+        <BR>
+
+        <BR>
+
+        <TABLE WIDTH = "750">
+
+            <TR>
+
+                <TD>
+<script>
+
+clearTimeout(autoscrolltimeout);
+</script>
+                    <H1> :: <?php  echo getlang("การสำรองข้อมูลเสร็จเรียบร้อย::l::Backup complete"); ?></H1>
+
+                    <BR> 
+				<BLOCKQUOTE>
+				<B><?php  echo getlang("หมายเหตุ :: ไฟล์ต่อไปนี้ถูกยกเว้นไม่ให้ได้รับการ Backup::l::Note :: following tables are skipped form backup"); ?></B><BR><BR><?php  
+$skipdb = array_merge($skipdb, $forceskipdb);
+$skipdb = array_unique($skipdb);
+foreach ($skipdb as $a) {
+	echo "<nobr><IMG SRC='../neoimg/Seal.gif' WIDTH='16' HEIGHT='16' BORDER='0' ALT='' align=absmiddle> $a </nobr><wbr>";
+}
+
+
+	$gz = gzopen($path . "$bkfilename.gz",'w9');
+	gzwrite($gz, file_get_contents($path . "$bkfilename"));
+	gzclose($gz);
+
+	tmq("update backup_log set filename='deleted' where filename='maxbackup.tgz' ");
+	tmq("insert into backup_log set
+	dt='$now',
+	type1='libbackup',
+	useradmin='$useradminid',
+	filename='$bkfilename'
+	");
+	
+?>
+
+</BLOCKQUOTE>                </TD></TR></TABLE>
+
+<?php /*?>
+        <BR>
+
+        <BR>
+
+        <B><A HREF = "get.php" target = _blank><?php  echo getlang("ดาวน์โหลดไฟล์ข้อมูล::l::Download backup file"); ?></A></B> [<?php  echo getlang("คลิกขวาแล้วเลือก::l::Right-click then choose"); ?> Save Target As....]
+
+<?php */
+$cl=barcodeval_get("activateulib-status");
+if ($cl=="registered") {
+	?><div align=center><iframe src="index.php?push=yes&picker=<?php  echo randid();?>" align=absmiddle FRAMEBORDER="no" BORDER=0
+ SCROLLING=NO width=420 height=80 style="float:center"></iframe></div><?php 
+}
+
+?>
+
+        <BR>
+
+        <BR>
+
+<!--
+
+phpMyBackup Copyright &copy; 2000-2001 by Holger Mauermann.<br>
+
+MySQL PHP Helper Copyright &copy; 2002 by zMola Washer.<br><br>
+
+-->
+
+        <?php 
+if (library_gotpermission("fullbackup")) {
+   ?><center>
+        <BR>
+        <B><A HREF = "libget.php?mode=<?php  echo $bktype; ?>" target = _blank><?php  echo getlang("ดาวน์โหลดไฟล์ข้อมูล::l::Download backup file"); ?></A></B> [<?php  echo getlang("คลิกขวาแล้วเลือก::l::Right-click then choose"); ?> Save Target As....]
+
+
+        <BR>
+
+        <B><A HREF = "libget.php?mode=<?php  echo $bktype; ?>&iszip=.gz" target = _blank><?php  echo getlang("ดาวน์โหลดไฟล์ข้อมูล::l::Download backup file"); ?></A></B> (<?php echo getlang("บีบอัดแล้ว::l::Compressed")?>)
+
+        <BR><?php
+}
+        
+
+foot();        ?>

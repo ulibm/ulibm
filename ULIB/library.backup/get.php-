@@ -1,0 +1,32 @@
+<?php 
+
+    ;
+
+    //echo "$loginadmin sdfgsdfgsdf";
+// พ
+include("../inc/config.inc.php");
+loginchk_lib();
+        //header("file-name: bak.bak\n");
+
+		header("Content-Disposition: attachment; filename=\"ulib-backup.backup\"\n"); 
+        header ("Content-Type: application/download\n");
+
+        //header ("Content-Disposition: attachment; filename=\"./dump/backup.sql\"");
+
+        //die;
+
+        $fd=fopen("../_output/backup-light.sql", "r");
+
+        while ($line=fgets($fd, 1000))
+
+            {
+
+            //    $alltext.=$line;
+
+            echo $line;
+
+            }
+
+        fclose ($fd);
+
+?>
