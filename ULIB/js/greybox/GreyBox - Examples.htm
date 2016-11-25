@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0045)http://orangoo.com/labs/greybox/examples.html -->
+<HTML xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><STYLE>.chrome-seo_meta-nofollow,.chrome-seo_meta-nofollow *{outline:2px dashed #ffb400!important;outline-offset:1px;}.chrome-seo_nofollow,.chrome-seo_nofollow *{outline:2px dotted #e90000!important;outline-offset:1px;}</STYLE><HEAD><META http-equiv="Content-Type" content="text/html; charset=windows-874">
+    <TITLE>GreyBox - Examples</TITLE>
+
+    <SCRIPT type="text/javascript">
+        var GB_ROOT_DIR = "./greybox/";
+    </SCRIPT>
+
+    <SCRIPT type="text/javascript" src="./GreyBox - Examples_files/AJS.js"></SCRIPT>
+    <SCRIPT type="text/javascript" src="./GreyBox - Examples_files/AJS_fx.js"></SCRIPT>
+    <SCRIPT type="text/javascript" src="./GreyBox - Examples_files/gb_scripts.js"></SCRIPT>
+    <LINK href="./GreyBox - Examples_files/gb_styles.css" rel="stylesheet" type="text/css" media="all">
+
+    <SCRIPT type="text/javascript" src="./GreyBox - Examples_files/help.js"></SCRIPT>
+    <LINK href="./GreyBox - Examples_files/help.css" rel="stylesheet" type="text/css" media="all">
+</HEAD><BODY>
+
+<SCRIPT>
+    insertHeader();
+    insertMenu('examples');
+</SCRIPT><DIV><DIV id="top"> <IMG src="./GreyBox - Examples_files/logo.gif" alt=""> <BR><SPAN style="font-weight: bold; color: #333">A pop-up window that doesn't suck.</SPAN></DIV></DIV><UL id="menu"><LI class="installation"><A href="http://orangoo.com/labs/greybox/installation.html">Installation</A></LI><LI class="examples"><A href="./GreyBox - Examples_files/GreyBox - Examples.htm" class="current">Examples</A></LI><LI class="nrm_usage"><A href="http://orangoo.com/labs/greybox/normal_usage.html">Normal usage</A></LI><LI class="adv_usage"><A href="http://orangoo.com/labs/greybox/advance_usage.html">Advance usage</A></LI><LI class="cmpr"><A href="http://orangoo.com/labs/greybox/compressing_greybox.html">Compressing GreyBox</A></LI><LI class="about"><A href="http://orangoo.com/labs/greybox/about.html">About</A></LI></UL>
+
+
+<H3>One website</H3>
+<UL>
+    <LI>
+        <A href="http://google.com/" title="Google" rel="gb_page_center[640, 480]">Launch google.com in a 640x480 window</A>
+    </LI>
+    <LI>
+        <A href="http://google.com/" title="Google" rel="gb_page_fs[]">Launch google.com in fullscreen window</A>
+    </LI>
+</UL>
+
+<H3>Website gallery</H3>
+<UL>
+    <LI>
+        <A href="http://google.com/" title="Google" rel="gb_pageset[search_sites]">Launch Google search</A>
+    </LI>
+    <LI>
+        <A href="http://search.yahoo.com/" rel="gb_pageset[search_sites]">Launch Yahoo search</A>
+    </LI>
+    <LI>
+        <A href="http://www.koders.com/" rel="gb_pageset[search_sites]">Launch Koders search</A>
+    </LI>
+</UL>
+
+<H3>Image gallery</H3>
+<SCRIPT type="text/javascript">
+var image_set = [{'caption': 'Flower', 'url': 'http://static.flickr.com/119/294309231_a3d2a339b9.jpg'},
+                 {'caption': 'Nice waterfall', 'url': 'http://www.widerange.org/images/large/plitvicka.jpg'}];
+</SCRIPT>
+
+<UL>
+    <LI>
+        <A href="http://orangoo.com/labs/greybox/examples.html#" onclick="return GB_showImageSet(image_set, 1)">Launch gallery</A>
+    </LI>
+
+    <LI>
+        <A href="http://orangoo.com/labs/greybox/static_files/night_valley.jpg" rel="gb_imageset[nice_pics]" title="Night valley">
+            <IMG src="./GreyBox - Examples_files/night_valley_thumb.jpg">
+        </A>
+    </LI>
+
+    <LI>
+        <A href="http://orangoo.com/labs/greybox/static_files/salt.jpg" rel="gb_imageset[nice_pics]" title="Salt flats in Chile">
+            <IMG src="./GreyBox - Examples_files/salt_thumb.gif">
+        </A>
+    </LI>
+</UL>
+
+<H3>Without loading</H3>
+<SCRIPT type="text/javascript">
+GB_myShow = function(caption, url, /* optional */ height, width, callback_fn) {
+    var options = {
+        caption: caption,
+        height: height || 500,
+        width: width || 500,
+        fullscreen: false,
+        show_loading: false,
+        callback_fn: callback_fn
+    }
+    var win = new GB_Window(options);
+    return win.show(url);
+}
+</SCRIPT>
+<UL>
+    <LI>
+        <A href="http://google.com/" onclick="return GB_myShow(&#39;Google&#39;, this.href)">Visit Google without loading</A>
+    </LI>
+</UL>
+
+
+
+</BODY></HTML>
