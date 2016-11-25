@@ -1,0 +1,24 @@
+<?php 
+	; 
+		
+        include ("../inc/config.inc.php");
+		head();
+		include("_REQPERM.php");
+        $tmp=mn_lib();
+			pagesection($tmp);
+			if (trim(barcodeval_get("activateulib-refcode"))=="") {
+				html_dialog("Warning","โมดูลนี้จะใช้งานได้ก็ต่อเมื่อติดตั้งโปรแกรมที่ไอพีจริง และลงทะเบียนโปรแกรม ULibM แล้ว");
+			}
+?><TABLE width="<?php  echo $_TBWIDTH;?>" align=center>
+<TR valign=top>
+	<TD width=160>
+	<A HREF="import.php" class="smaller a_btn" target=dsp><?php  echo getlang("นำเข้า::l::Import");?></A><BR>
+	<A HREF="hist.php" class="smaller a_btn" target=dsp><?php  echo getlang("ประวัติการนำเข้า::l::Import History");?></A><BR>
+	<A HREF="offlinemode.zip" class="smaller a_btn" target=dsp><?php  echo getlang("ดาวน์โหลดโปรแกรม::l::Download");?></A><BR>
+</TD>
+	<TD><iframe name="dsp" width="<?php  echo $_TBWIDTH-160;?>" height=1000 src="about.php"></iframe></TD>
+</TR>
+</TABLE>
+<?php 
+foot();
+?>
