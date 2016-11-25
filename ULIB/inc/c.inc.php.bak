@@ -1,0 +1,28 @@
+<?  //พ
+	$__AUTOCONFIG="no";
+	if ($__AUTOCONFIG=="yes") {
+		$host = "localhost"; 
+		$user="root";
+		$passwd="usbw";
+		$dbname=strtolower("$dcr");
+		$dbmode="mysqli";
+
+		$dbcoll="tis620";
+	} else {
+		$host = "localhost"; 
+		$user="root";
+		$passwd="usbw";
+		$dbname="ulib6";
+		$dbmode="mysqli";
+		
+		$dbcoll="tis-620";
+	}
+
+		$memberspechtml = " width=128 height=144 ";
+		$memberspechtml_w=128;
+		$memberspechtml_h=144;
+$newline="
+";		
+
+		$_GLOBAL_UPLOADSIZE=1024*1024*500; //bytes
+?>

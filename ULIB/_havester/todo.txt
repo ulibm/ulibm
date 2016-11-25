@@ -1,0 +1,10 @@
+
+1. U/_havester + 2 table
+2. Cliente/library.book/addnewDBBook.php - update lastupdate
+3. U/search.inc.mediarow.php copy U part
+4. U/dublin + dublinfull.php
+5. U/inc/index_reindex - havesterpart - plus at insert cmd
+6. U/searchmodule - start havester part (3 part)
+7. U/globalpuller
+8. U/searchmodule - order by part
+9. U/root.index_reindex/media_type.php - havest part

@@ -1,0 +1,36 @@
+2014-02-11 07:04:53: <br />
+<b>Strict Standards</b>:  Non-static method QRinput::check() should not be called statically, assuming $this from incompatible context in <b>H:\portable\root\ULIB6\inc\phpqrcode\qrinput.php</b> on line <b>46</b><br />
+<br />
+<b>Strict Standards</b>:  Non-static method QRinput::check() should not be called statically, assuming $this from incompatible context in <b>H:\portable\root\ULIB6\inc\phpqrcode\qrinput.php</b> on line <b>46</b><br />
+<br />
+<b>Strict Standards</b>:  Non-static method QRinput::check() should not be called statically, assuming $this from incompatible context in <b>H:\portable\root\ULIB6\inc\phpqrcode\qrinput.php</b> on line <b>46</b><br />
+2014-02-11 07:05:45: <br />
+<b>Strict Standards</b>:  Non-static method QRinput::check() should not be called statically, assuming $this from incompatible context in <b>H:\portable\root\ULIB6\inc\phpqrcode\qrinput.php</b> on line <b>46</b><br />
+<br />
+<b>Strict Standards</b>:  Non-static method QRinput::check() should not be called statically, assuming $this from incompatible context in <b>H:\portable\root\ULIB6\inc\phpqrcode\qrinput.php</b> on line <b>46</b><br />
+<br />
+<b>Strict Standards</b>:  Non-static method QRinput::check() should not be called statically, assuming $this from incompatible context in <b>H:\portable\root\ULIB6\inc\phpqrcode\qrinput.php</b> on line <b>46</b><br />
+2014-02-11 07:06:09: <br />
+<b>Strict Standards</b>:  Non-static method QRinput::check() should not be called statically, assuming $this from incompatible context in <b>H:\portable\root\ULIB6\inc\phpqrcode\qrinput.php</b> on line <b>46</b><br />
+<br />
+<b>Strict Standards</b>:  Non-static method QRinput::check() should not be called statically, assuming $this from incompatible context in <b>H:\portable\root\ULIB6\inc\phpqrcode\qrinput.php</b> on line <b>46</b><br />
+<br />
+<b>Strict Standards</b>:  Non-static method QRinput::check() should not be called statically, assuming $this from incompatible context in <b>H:\portable\root\ULIB6\inc\phpqrcode\qrinput.php</b> on line <b>46</b><br />
+2014-02-11 07:06:22: <br />
+<b>Strict Standards</b>:  Non-static method QRinput::check() should not be called statically, assuming $this from incompatible context in <b>H:\portable\root\ULIB6\inc\phpqrcode\qrinput.php</b> on line <b>46</b><br />
+<br />
+<b>Strict Standards</b>:  Non-static method QRinput::check() should not be called statically, assuming $this from incompatible context in <b>H:\portable\root\ULIB6\inc\phpqrcode\qrinput.php</b> on line <b>46</b><br />
+<br />
+<b>Strict Standards</b>:  Non-static method QRinput::check() should not be called statically, assuming $this from incompatible context in <b>H:\portable\root\ULIB6\inc\phpqrcode\qrinput.php</b> on line <b>46</b><br />
+2014-02-11 07:06:32: <br />
+<b>Strict Standards</b>:  Non-static method QRinput::check() should not be called statically, assuming $this from incompatible context in <b>H:\portable\root\ULIB6\inc\phpqrcode\qrinput.php</b> on line <b>46</b><br />
+<br />
+<b>Strict Standards</b>:  Non-static method QRinput::check() should not be called statically, assuming $this from incompatible context in <b>H:\portable\root\ULIB6\inc\phpqrcode\qrinput.php</b> on line <b>46</b><br />
+<br />
+<b>Strict Standards</b>:  Non-static method QRinput::check() should not be called statically, assuming $this from incompatible context in <b>H:\portable\root\ULIB6\inc\phpqrcode\qrinput.php</b> on line <b>46</b><br />
+2014-02-11 07:06:42: <br />
+<b>Strict Standards</b>:  Non-static method QRinput::check() should not be called statically, assuming $this from incompatible context in <b>H:\portable\root\ULIB6\inc\phpqrcode\qrinput.php</b> on line <b>46</b><br />
+<br />
+<b>Strict Standards</b>:  Non-static method QRinput::check() should not be called statically, assuming $this from incompatible context in <b>H:\portable\root\ULIB6\inc\phpqrcode\qrinput.php</b> on line <b>46</b><br />
+<br />
+<b>Strict Standards</b>:  Non-static method QRinput::check() should not be called statically, assuming $this from incompatible context in <b>H:\portable\root\ULIB6\inc\phpqrcode\qrinput.php</b> on line <b>46</b><br />

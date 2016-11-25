@@ -1,0 +1,12 @@
+recheck function exist at foot();
+backup , tb to skip
+ bk show sha1+md5+ link to dl exe for win [sha1_file]
+ dse lock by val
+ dse backup encode delete then, erase allbackup in _output
+ lib+root autosetlang setting
+dse at function_req.php (root)
+
+
+ 2copy
+ -blowfish* 2 file
+dse*

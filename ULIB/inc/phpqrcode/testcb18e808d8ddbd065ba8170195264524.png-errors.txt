@@ -1,0 +1,2 @@
+2014-02-11 11:32:16: <br />
+<b>Strict Standards</b>:  Non-static method QRinput::check() should not be called statically, assuming $this from incompatible context in <b>H:\portable\root\ULIB6\inc\phpqrcode\qrinput.php</b> on line <b>46</b><br />

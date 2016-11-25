@@ -1,0 +1,5 @@
+หากใช้ Install.bat ไม่ผ่าน ให้ทำแบบ manual โดยการ
+1. คัดลอกไฟล์ Biokey.ocx ไปไว้ที่ C:/windows/system32
+
+2. Run คำสั่ง
+regsvr32 C:\windows\system32\Biokey.ocx

@@ -1,0 +1,24 @@
+<?php 
+$type='TrueType';
+$name='Arial-BlackItalic';
+$desc=array('Ascent'=>1101,'Descent'=>-310,'CapHeight'=>716,'Flags'=>96,'FontBBox'=>'[-114 -210 1129 765]','ItalicAngle'=>-13.1,'StemV'=>70,'MissingWidth'=>1000);
+$up=-100;
+$ut=50;
+$cw=array(
+	chr(0)=>1000,chr(1)=>1000,chr(2)=>1000,chr(3)=>1000,chr(4)=>1000,chr(5)=>1000,chr(6)=>1000,chr(7)=>1000,chr(8)=>1000,chr(9)=>1000,chr(10)=>1000,chr(11)=>1000,chr(12)=>1000,chr(13)=>1000,chr(14)=>1000,chr(15)=>1000,chr(16)=>1000,chr(17)=>1000,chr(18)=>1000,chr(19)=>1000,chr(20)=>1000,chr(21)=>1000,
+	chr(22)=>1000,chr(23)=>1000,chr(24)=>1000,chr(25)=>1000,chr(26)=>1000,chr(27)=>1000,chr(28)=>1000,chr(29)=>1000,chr(30)=>1000,chr(31)=>1000,' '=>333,'!'=>333,'"'=>500,'#'=>660,'$'=>667,'%'=>1000,'&'=>889,'\''=>278,'('=>389,')'=>389,'*'=>556,'+'=>660,
+	','=>333,'-'=>333,'.'=>333,'/'=>278,'0'=>667,'1'=>667,'2'=>667,'3'=>667,'4'=>667,'5'=>667,'6'=>667,'7'=>667,'8'=>667,'9'=>667,':'=>333,';'=>333,'<'=>660,'='=>660,'>'=>660,'?'=>611,'@'=>740,'A'=>778,
+	'B'=>778,'C'=>778,'D'=>778,'E'=>722,'F'=>667,'G'=>833,'H'=>833,'I'=>389,'J'=>667,'K'=>833,'L'=>667,'M'=>944,'N'=>833,'O'=>833,'P'=>722,'Q'=>833,'R'=>778,'S'=>722,'T'=>722,'U'=>833,'V'=>778,'W'=>1000,
+	'X'=>778,'Y'=>778,'Z'=>722,'['=>389,'\\'=>278,']'=>389,'^'=>660,'_'=>500,'`'=>333,'a'=>667,'b'=>667,'c'=>667,'d'=>667,'e'=>667,'f'=>389,'g'=>667,'h'=>667,'i'=>333,'j'=>333,'k'=>667,'l'=>333,'m'=>1000,
+	'n'=>667,'o'=>667,'p'=>667,'q'=>667,'r'=>444,'s'=>611,'t'=>444,'u'=>667,'v'=>611,'w'=>944,'x'=>667,'y'=>611,'z'=>556,'{'=>389,'|'=>278,'}'=>389,'~'=>660,chr(127)=>1000,chr(128)=>1000,chr(129)=>1000,chr(130)=>1000,chr(131)=>1000,
+	chr(132)=>1000,chr(133)=>1000,chr(134)=>1000,chr(135)=>1000,chr(136)=>1000,chr(137)=>1000,chr(138)=>1000,chr(139)=>1000,chr(140)=>1000,chr(141)=>1000,chr(142)=>1000,chr(143)=>1000,chr(144)=>1000,chr(145)=>278,chr(146)=>278,chr(147)=>500,chr(148)=>500,chr(149)=>500,chr(150)=>500,chr(151)=>1000,chr(152)=>1000,chr(153)=>1000,
+	chr(154)=>1000,chr(155)=>1000,chr(156)=>1000,chr(157)=>1000,chr(158)=>1000,chr(159)=>1000,chr(160)=>333,chr(161)=>1000,chr(162)=>1000,chr(163)=>1000,chr(164)=>1000,chr(165)=>1000,chr(166)=>1000,chr(167)=>1000,chr(168)=>1000,chr(169)=>1000,chr(170)=>1000,chr(171)=>1000,chr(172)=>1000,chr(173)=>1000,chr(174)=>1000,chr(175)=>1000,
+	chr(176)=>1000,chr(177)=>1000,chr(178)=>1000,chr(179)=>1000,chr(180)=>1000,chr(181)=>1000,chr(182)=>1000,chr(183)=>1000,chr(184)=>1000,chr(185)=>1000,chr(186)=>1000,chr(187)=>1000,chr(188)=>1000,chr(189)=>1000,chr(190)=>1000,chr(191)=>1000,chr(192)=>1000,chr(193)=>1000,chr(194)=>1000,chr(195)=>1000,chr(196)=>1000,chr(197)=>1000,
+	chr(198)=>1000,chr(199)=>1000,chr(200)=>1000,chr(201)=>1000,chr(202)=>1000,chr(203)=>1000,chr(204)=>1000,chr(205)=>1000,chr(206)=>1000,chr(207)=>1000,chr(208)=>1000,chr(209)=>1000,chr(210)=>1000,chr(211)=>1000,chr(212)=>1000,chr(213)=>1000,chr(214)=>1000,chr(215)=>1000,chr(216)=>1000,chr(217)=>1000,chr(218)=>1000,chr(219)=>1000,
+	chr(220)=>1000,chr(221)=>1000,chr(222)=>1000,chr(223)=>1000,chr(224)=>1000,chr(225)=>1000,chr(226)=>1000,chr(227)=>1000,chr(228)=>1000,chr(229)=>1000,chr(230)=>1000,chr(231)=>1000,chr(232)=>1000,chr(233)=>1000,chr(234)=>1000,chr(235)=>1000,chr(236)=>1000,chr(237)=>1000,chr(238)=>1000,chr(239)=>1000,chr(240)=>1000,chr(241)=>1000,
+	chr(242)=>1000,chr(243)=>1000,chr(244)=>1000,chr(245)=>1000,chr(246)=>1000,chr(247)=>1000,chr(248)=>1000,chr(249)=>1000,chr(250)=>1000,chr(251)=>1000,chr(252)=>1000,chr(253)=>1000,chr(254)=>1000,chr(255)=>1000);
+$enc='cp874';
+$diff='130 /.notdef /.notdef /.notdef 134 /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef 142 /.notdef 152 /.notdef /.notdef /.notdef /.notdef /.notdef 158 /.notdef /.notdef 161 /kokaithai /khokhaithai /khokhuatthai /khokhwaithai /khokhonthai /khorakhangthai /ngonguthai /chochanthai /chochingthai /chochangthai /sosothai /chochoethai /yoyingthai /dochadathai /topatakthai /thothanthai /thonangmonthothai /thophuthaothai /nonenthai /dodekthai /totaothai /thothungthai /thothahanthai /thothongthai /nonuthai /bobaimaithai /poplathai /phophungthai /fofathai /phophanthai /fofanthai /phosamphaothai /momathai /yoyakthai /roruathai /ruthai /lolingthai /luthai /wowaenthai /sosalathai /sorusithai /sosuathai /hohipthai /lochulathai /oangthai /honokhukthai /paiyannoithai /saraathai /maihanakatthai /saraaathai /saraamthai /saraithai /saraiithai /sarauethai /saraueethai /sarauthai /sarauuthai /phinthuthai /.notdef /.notdef /.notdef /.notdef /bahtthai /saraethai /saraaethai /saraothai /saraaimaimuanthai /saraaimaimalaithai /lakkhangyaothai /maiyamokthai /maitaikhuthai /maiekthai /maithothai /maitrithai /maichattawathai /thanthakhatthai /nikhahitthai /yamakkanthai /fongmanthai /zerothai /onethai /twothai /threethai /fourthai /fivethai /sixthai /seventhai /eightthai /ninethai /angkhankhuthai /khomutthai /.notdef /.notdef /.notdef /.notdef';
+$file='ARBLI___.TTF.z';
+$originalsize=65544;
+?>

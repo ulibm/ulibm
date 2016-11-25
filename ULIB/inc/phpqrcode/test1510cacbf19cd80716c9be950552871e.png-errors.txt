@@ -1,0 +1,6 @@
+2014-06-11 08:09:54: <br />
+<b>Strict Standards</b>:  Non-static method QRinput::check() should not be called statically, assuming $this from incompatible context in <b>G:\ulib_portable_cd\ulibm_portable\root\ULIB6\inc\phpqrcode\qrinput.php</b> on line <b>46</b><br />
+2014-06-12 04:07:46: <br />
+<b>Strict Standards</b>:  Non-static method QRinput::check() should not be called statically, assuming $this from incompatible context in <b>G:\ulib_portable_cd\ulibm_portable\root\ULIB6\inc\phpqrcode\qrinput.php</b> on line <b>46</b><br />
+2014-06-16 06:07:05: <br />
+<b>Strict Standards</b>:  Non-static method QRinput::check() should not be called statically, assuming $this from incompatible context in <b>G:\ulib_portable_cd\ulibm_portable\root\ULIB6\inc\phpqrcode\qrinput.php</b> on line <b>46</b><br />

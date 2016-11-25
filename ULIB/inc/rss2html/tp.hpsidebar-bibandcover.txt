@@ -1,0 +1,15 @@
+
+<FONT style="border-color: 999999; border-style: dotted; border-width: 0; border-bottom-width: 3 ; font-weight: bold; display: block; width: 90%"><B class=smaller>~~~FeedTitle~~~</B></FONT>
+
+       <FONT SIZE="" COLOR="#000066" class=smaller2> ~~~FeedDescription~~~</FONT>
+        <BR>
+        <TABLE width="100%" cellpadding=2 cellspacing=0>
+            ~~~BeginItemsRecord~~~
+            <TR valign=top>
+                <TD width=60><FONT class=smaller>~~~ItemDescription~~~</FONT>
+                </TD>                <TD>
+                  <A href="~~~ItemLink~~~" target=_blank class=smaller>~~~ItemTitle~~~</A>
+                </TD>
+            </TR>
+            ~~~EndItemsRecord~~~
+        </TABLE>

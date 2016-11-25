@@ -1,0 +1,11 @@
+# CREATED BY ULibM
+
+Options +FollowSymLinks
+RewriteEngine On
+RewriteBase /
+# Rewrite Rules
+
+RewriteRule \.sql$ - [R=404]
+RewriteRule \.txt$ - [R=404]
+RewriteRule \.out$ - [R=404]
+RewriteRule \.gz$ - [R=404]

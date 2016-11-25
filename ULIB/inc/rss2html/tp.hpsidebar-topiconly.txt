@@ -1,0 +1,11 @@
+
+<FONT style="border-color: 999999; border-style: dotted; border-width: 0; border-bottom-width: 3 ; font-size: 20px; font-weight: bold; display: block; width: 90%"><B>~~~FeedTitle~~~</B></FONT>
+
+       <FONT SIZE="" COLOR="#000066"> ~~~FeedDescription~~~</FONT>
+        <BR>
+
+            ~~~BeginItemsRecord~~~
+<div style="display:block; width: 100%">    
+                    <img src="./neoimg/rss.gif" border=0 align=absmiddle> <A href="~~~ItemLink~~~" target=_blank class=smaller>~~~ItemTitle~~~</A>
+</div>
+            ~~~EndItemsRecord~~~

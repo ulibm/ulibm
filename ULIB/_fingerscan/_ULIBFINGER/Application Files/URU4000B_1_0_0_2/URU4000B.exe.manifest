@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="URU4000B.exe" version="1.0.0.2" publicKeyToken="27ed3f1625238bd6" language="neutral" processorArchitecture="x86" type="win32" />
+  <description asmv2:iconFile="PerfCenterCpl.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="URU4000B" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+    <commandLine file="URU4000B.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="stdole" version="7.0.3300.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AxInterop.ZKFPEngXControl.dll" size="32768">
+      <assemblyIdentity name="AxInterop.ZKFPEngXControl" version="3.5.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>LrlP317nAiAmaCs7JXSVtYMG9tE=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Interop.ZKFPEngXControl.dll" size="32768">
+      <assemblyIdentity name="Interop.ZKFPEngXControl" version="3.5.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>XgJmLvHIAeg27rVAejpn1cFCRhs=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="URU4000B.exe" size="139264">
+      <assemblyIdentity name="URU4000B" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>KqY8h8UMpoeAWv4+7pxZuaYbOjU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="PerfCenterCpl.ico" size="116288">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>LtBsnkmbKoDWFqamHW2SY4Gdjhc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="URU4000B.exe.config" size="838">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>E34D2FLU2WvLlIpSL49T41r7/yk=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=Peace-OfficePC\Peace" issuerKeyHash="b0396b90204773493458c6bdbb1dbce4a042db20" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>xWruPZAohjxMVqIFuIr+c/vZfMs=</DigestValue></Reference></SignedInfo><SignatureValue>ITKsXgQQnxtX6LoMHbMKD1gGUiwD8s4LmNDOp4zSYmpfoHSKG41EqNT3SJcNzhqskCZjQRjdKcOr+ElvPSErrybP0yuD02jc3i4TYxsKjNyH3MKZn+23+bZvshVqQUbaXqQLtfNCoT1DyJNjkNyByw9zPocMrcqFhxt/8WjlAr8=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>tVUIRqPUL6+nRrw/ZULuAAnAtJpVWMzLFf1xf8Mxcug3sXNL03ZYovGLowXhZVjXqAFbNPEWpCk9vWsiVji0hIo1pzMEs0V/bRnqnmVspTWTUEs+lakPQkAX5k6ySP11ayamRkf+wc3Z3Z/yFVYWlAo1py6omXb4gzkq0Mmgcik=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="cb7cd9fb73fe8ab805a2564c3c8628903dee6ac5" Description="" Url=""><as:assemblyIdentity name="URU4000B.exe" version="1.0.0.2" publicKeyToken="27ed3f1625238bd6" language="neutral" processorArchitecture="x86" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=Peace-OfficePC\Peace</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>tcenlJZC1iebHsp00FK5ZoGI+B4=</DigestValue></Reference></SignedInfo><SignatureValue>i8NkLFgA2n527qf6okVQLY4OzPhp9QM6ld8PChw9tte/hqdmty/1C9RrY9NX5ITcO9ER7xKaN6uQslVNVq99vB0gwfOoKu8KqfLF/vooZYT4gg2J2TXq5lKP/Fyy3GhIB5HuNtliOAJTQ5+K0Syqg2nvg9UJyz25KzChITkbRSY=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>tVUIRqPUL6+nRrw/ZULuAAnAtJpVWMzLFf1xf8Mxcug3sXNL03ZYovGLowXhZVjXqAFbNPEWpCk9vWsiVji0hIo1pzMEs0V/bRnqnmVspTWTUEs+lakPQkAX5k6ySP11ayamRkf+wc3Z3Z/yFVYWlAo1py6omXb4gzkq0Mmgcik=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB6TCCAVKgAwIBAgIQdsSvcAibQ6tBPtES/qHSODANBgkqhkiG9w0BAQUFADAzMTEwLwYDVQQDHigAUABlAGEAYwBlAC0ATwBmAGYAaQBjAGUAUABDAFwAUABlAGEAYwBlMB4XDTEzMTEyNTA2MjExN1oXDTE0MTEyNTEyMjExN1owMzExMC8GA1UEAx4oAFAAZQBhAGMAZQAtAE8AZgBmAGkAYwBlAFAAQwBcAFAAZQBhAGMAZTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAtVUIRqPUL6+nRrw/ZULuAAnAtJpVWMzLFf1xf8Mxcug3sXNL03ZYovGLowXhZVjXqAFbNPEWpCk9vWsiVji0hIo1pzMEs0V/bRnqnmVspTWTUEs+lakPQkAX5k6ySP11ayamRkf+wc3Z3Z/yFVYWlAo1py6omXb4gzkq0MmgcikCAwEAATANBgkqhkiG9w0BAQUFAAOBgQCMI9oePl7x5jCG9L5LHcNm1Sz93ID6vMoB03HZ5ZaZPujiKMYVtHkhtTAXTivozDTboMmIOyNvKCbGUOn7OaT7o9MZio7WKsFru0swcw74Bsiaa3oz/T7nSaRiVBWpmVJ1Lv3egup2R0ZNnYja6C5rfDimJC208Zp3+IeLwp7/hQ==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

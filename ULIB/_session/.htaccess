@@ -1,0 +1,8 @@
+# CREATED BY ULibM
+
+Options +FollowSymLinks
+RewriteEngine On
+RewriteBase /
+# Rewrite Rules
+
+RewriteRule sess_ - [R=404]
