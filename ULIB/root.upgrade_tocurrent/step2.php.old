@@ -1,0 +1,150 @@
+<?php
+	; 
+	ob_start();
+		set_time_limit(600);
+        include ("../inc/config.inc.php");
+		head();
+        mn_root("upgrade_tocurrent");
+			pagesection("Upgrade to Current");
+
+?><BR>
+<?
+if ($ui_dbname==$dbname) {
+	die("could not use same dbname $ui_dbname;");
+}
+
+$link=mysql_connect($ui_host, $ui_user, $ui_passwd);
+if (!$link) {
+    echo 'Could not connect to mysql';
+    exit;
+}
+
+$sql = "SHOW TABLES FROM $ui_dbname";
+$result = mysql_db_query($ui_dbname,$sql,$link);
+
+if (!$result) {
+    echo "DB Error, could not access dbs\n";
+    echo 'MySQL Error: ' . mysql_error();
+    exit;
+}
+
+$tbtoupdate=explode(",","acq_acq,acq_acq_status,acq_budgettype,acq_company,acq_media,acq_mediasent,acq_setbudget,acq_tocatalog,bkdsp,bkedit,chainerlink,checkout,checkout_rule,closeservice,collections,contact,countuse_name,coverbyinfo,createlist_main,createlist_result,createlist_rule,dbfulltext_cate,dbfulltext_subext,easyadd_map,fft_upload,fine,finedone,freedb_cate,freedb_link,globalupload,holdlong_notif,htmltemplate,ignoreword,index_ctrl,index_db,index_db_subj,library,library_permission,library_site,libsite_bibpermission,libsite_permission,libsite_vars_vars,major,marc_template,media,media_edittrace,media_ftitems,media_fttype,media_mid,media_mid_status,media_place,media_status,media_type,member,member_customfield,member_type,ms_annouce,request_list,room,rqroom_eventinfo,rqroom_maintb,rqroom_periodinfo,rqroom_repeatinfo,rqroom_roomsub,rqroom_timetbi,searchcloud,serials_rectype,servicespot_client,servicespot_room,stathist_checkout_member_libsite,stathist_checkout_member_media,stathist_cir_member,stathist_librarian_login_ip,stathist_servspot_member,stathist_ttb_member,stathist_used_shelf_book,statordr_checkout_book,statordr_checkout_member,statordr_ft_resid,statordr_memberlogin_member,statordr_ms_member,statordr_search_text,statordr_sharemarc,statordr_used_book,stat_checkin_librarian,stat_checkout_byhrs,stat_checkout_callndc,stat_checkout_callnlc,stat_checkout_librarian,stat_checkout_libsite,stat_checkout_mbmajor,stat_checkout_mbroom,stat_checkout_mbtype,stat_checkout_restype,stat_ft_fttype,stat_memberlogin_membertype,stat_ms_membertype,stat_sharemarc_type,stat_visithp_type,tb_editor,tb_editor_field,tb_editor_tp,tb_relatechk,ulibclient,ulibclient_module,ulibsv,umail_que,useradmin,webboard_boardcate,webboard_posts,webboard_post_attatch,webpage_answerpoint,webpage_answerpoint_tag,webpage_articles,webpage_article_attatch,webpage_bibrating_log,webpage_bibrating_sum,webpage_bibtag,webpage_bookcomment,webpage_hpsidebar,webpage_hpsidebar_content,webpage_hpsidebar_tabs,webpage_hpsidebar_tabs_content,webpage_hpsidebar_tabs_type,webpage_hpsidebar_tabs_url,webpage_hpsidebar_type,webpage_hpsidebar_url,webpage_incorrectbib,webpage_indexphotonews,webpage_lostandfound,webpage_lostandfound_tag,webpage_memfavbook,webpage_memfavbook_perscate,webpage_memregist,webpage_menu,webpage_menu_articledescr,webpage_menu_content,webpage_menu_type,webpage_menu_url,webpage_menu_wiki,webpage_mocalen,webpage_mocalen_resp,webpage_sections,webpage_showcase,webpage_wiki,webpage_wiki_status,weeklyclose,xpbc,xpbcbook,yaz_saved,yaz_sv");
+
+//$tbtoupdate=explode(',',"webpage_menu,webpage_sections");
+//printr($tbtoupdate);
+?><?
+
+	if ($page=="") {
+		$page=0;
+	} else {
+		$page=$page+1;
+	}
+@reset($tbtoupdate);
+$currenttb=$tbtoupdate[$page];
+//echo "[$currenttb]";
+?><CENTER><?
+$numset=count($tbtoupdate);
+if ($page>=count($tbtoupdate)) {
+	?><SCRIPT LANGUAGE="JavaScript">
+	<!--
+	alert("UPGRADE COMPLETED");
+	//-->
+	</SCRIPT><?
+	redir("index.php",0);
+	die;
+} else {
+			echo number_format(memory_get_usage())."<BR>";
+
+	$startposition=floor(sessionval_get("upgradetocurrent_rowi"));
+
+		 echo getlang("กำลังอัพเกรด [$currenttb]($startposition) หลังจากเสร็จ จะทำการอัพเกรดรอบต่อไปโดยอัตโนมัติ::l::. Upgrading [$currenttb]($startposition)  , After finish this file, system will continue automatically"); ?><BR><BR><BR>
+	<FONT SIZE="" COLOR="#5D5D5D"><B><H1>[<? echo $page +1?>/<? echo $numset ?>]</H1></B></FONT><BR><CENTER><?
+	echo html_graph("V",$numset+1,$page,20,500,"#952F2F");
+	$redirpath="step2.php?ui_host=$ui_host&ui_user=$ui_user&ui_passwd=$ui_passwd&ui_dbname=$ui_dbname&page=".($page)."&rand=".randid();
+	$redirpathback="step2.php?ui_host=$ui_host&ui_user=$ui_user&ui_passwd=$ui_passwd&ui_dbname=$ui_dbname&page=".($page-1)."&rand=".randid();
+	echo "</CENTER><BR><BR><BR>Creating INFO.struct ..";
+    ob_flush();
+    flush();
+	usleep(100);
+	$path= "../_output/_tmpupgrade.sql";
+	if ($startposition==0) {
+		$newfile="delete from $currenttb ;#%%\n";
+		///$newfile.=get_def($ui_dbname, $currenttb, "NO");
+		$newfile.="\n\n";
+		if (file_exists($path)) {
+			unlink($path);
+		}
+		echo "<BR>Creating INFO.data file..";
+		ob_flush();
+		flush();
+
+		$newfile.="\n\n";
+		$newfile.=get_content($ui_dbname, $currenttb, " DELAYED ");
+		//$newfile.=" ;#%%\n\n";
+
+		fso_file_write($path,"w+",$newfile);
+	}
+
+	echo "<BR>Executing INFO file..";
+    ob_flush();
+    flush();
+	usleep(100);
+	
+
+$i=0;
+$buff="";
+$handle = fopen($path, "rb");
+$expact="#%%";
+$endposition=$startposition+100;
+
+echo "<BR>";
+			echo number_format(memory_get_usage())."<BR>";
+while (!feof($handle)) {
+	$buff .= fread($handle, 1);
+	$decus=substr($buff,-3);
+		//die("a[$i/$startposition]<BR>");
+	if ($decus==$expact) {
+		$buff=trim($buff,$expact);
+		$i++;
+		if ($i>=$startposition && $i<$endposition) {
+			echo number_format(memory_get_usage())."<BR>";
+			$resultx=tmq($buff,false);
+			$buff="";
+			if ($resultx==false) {
+				$redirpatherror="step2.php?ui_host=$ui_host&ui_user=$ui_user&ui_passwd=$ui_passwd&ui_dbname=$ui_dbname&page=".($page-1)."&rand=".randid();
+				sessionval_set("upgradetocurrent_rowi",$i);
+
+				echo "error detected at [$i]<BR>Please check before retry<BR>
+				<A HREF='$redirpatherror'>click here when ready</A> ";
+				die;
+			}
+			usleep(20);
+		}
+		$buff="";
+		if (($i-$endposition)>20) {
+			break;
+		}
+	}
+}
+	//echo "[$startposition/$endposition]";
+if ($i>$endposition) {
+	sessionval_set("upgradetocurrent_rowi",$endposition);
+	redir($redirpathback,2);
+	die;
+} else {
+	sessionval_set("upgradetocurrent_rowi",0);
+}
+    ob_flush();
+    flush();
+	usleep(100);
+
+?><CENTER>
+<? echo getlang("เรียบร้อย ดำเนินการจำนวน $i รายการ::l::DONE,  ecexcuted  $i  times"); ?></CENTER><BR><BR>
+<?
+	redir($redirpath,2);
+
+}
+
+?></CENTER><?
+foot();
+?>
