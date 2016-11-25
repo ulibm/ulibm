@@ -1,0 +1,49 @@
+/*
+	do {
+		//if (false === ($buf = socket_read($msgsock, 2048))) {
+		if (false === ($buf = socket_read($msgsock, 1))) {
+			echo "socket_read() failed: reason: " . socket_strerror(socket_last_error($msgsock)) . "\n";
+			die;
+		}
+
+		//local_log("[".$buf."]=".ord($buf)."\n");
+		if ($buf == "\r\n" || $buf == "\n" || ord($buf)==13) {
+			local_log($bufall);
+			$dat=local_melt($bufall);
+			local_sput("941",true,true);
+			sleep(3);
+			die;
+		}
+		$bufall.=$buf;
+	} while (true);
+	die;
+*/
+	
+///////////////////////////////////////////client login end	
+/*
+$cur_buf = '';
+    do {
+        if (false === ($buf = socket_read($msgsock, 2048))) {
+            echo "socket_read() failed: reason: " . socket_strerror(socket_last_error($msgsock)) . "\n";
+            break 2;
+        }
+        if ($buf == "\r\n") {
+			local_log($buf);
+			if ($cur_buf == 'quit') {
+				echo 'Client #' .$client_id .': Disconnect' . "\n";
+				break;
+			}
+			if ($cur_buf == 'shutdown') {
+				socket_close($msgsock);
+				break 2;
+			}
+			//else {
+		   $talkback = "Unknown command: " . str_replace("\r\n", '\r\n', $cur_buf) ."\n";
+		   socket_write($msgsock, $talkback, strlen($talkback));
+		   // }
+			echo 'Client #' .$client_id .': ' . $cur_buf . "\n"; 
+			$cur_buf = '';
+        }
+        else $cur_buf .= $buf;
+    } while (true);
+	*/

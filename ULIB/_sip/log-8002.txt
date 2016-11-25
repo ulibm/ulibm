@@ -1,0 +1,462 @@
+
+2011 08 15 14:37:44 : READY!
+2011 08 15 14:37:44 : Socket 192.168.2.20:8002 has been opened
+
+2011 08 15 15:21:57 : READY!
+2011 08 15 15:21:57 : socket_bind() failed: reason: Address already in use
+
+2011 08 15 15:56:21 : READY!
+2011 08 15 15:56:21 : socket_bind() failed: reason: Address already in use
+
+2011 08 15 15:58:31 : READY!
+2011 08 15 15:58:31 : socket_bind() failed: reason: Address already in use
+
+2011 08 15 16:39:47 : READY!
+2011 08 15 16:39:47 : Socket 192.168.2.20:8002 has been opened
+
+2011 08 15 16:46:18 : READY!
+2011 08 15 16:46:18 : socket_bind() failed: reason: Address already in use
+
+2011 08 15 16:47:18 : READY!
+2011 08 15 16:47:18 : socket_bind() failed: reason: Address already in use
+
+2011 08 15 16:47:20 : READY!
+2011 08 15 16:47:20 : socket_bind() failed: reason: Address already in use
+
+2011 08 15 16:47:56 : socket_accept() : Client #1: Connected.
+
+2011 08 15 16:47:56 : local_get() Reading response
+2011 08 15 16:48:07 : GOT: 9300CNadmin|COabc123|AY0AZF7EF
+2011 08 15 16:48:07 : SIP2: Message from SC passed CRC check
+2011 08 15 16:48:07 : SEND>:941AY1AZFDFC
+:<END-SEND
+2011 08 15 16:48:07 : Login OK:admin@
+2011 08 15 16:48:07 : local_get() Reading response
+2011 08 15 16:48:07 : GOT: 
+9900402.00AY1AZFCA4
+2011 08 15 16:48:07 : SIP2: Message from SC passed CRC check
+2011 08 15 16:48:07 : Doing:SC status
+2011 08 15 16:48:07 : SEND>:98YYYYYY99999920110815    1639472.00AO1901|AMUnion Library Management |BXYYYNYYYNNNYNNNN|AY2AZE49B
+:<END-SEND
+2011 08 15 16:48:07 : Login OK:admin@
+2011 08 15 16:48:07 : local_get() Reading response
+2011 08 15 16:48:20 : GOT: 
+1720110815    163841AO1901|AB1111111111113|AC|AY2AZF493
+2011 08 15 16:48:20 : SIP2: Message from SC passed CRC check
+2011 08 15 16:48:20 : Doing:Item Information
+2011 08 15 16:48:20 : SEND>:1803000120110815    163947AB1111111111113|AJcomputer01|AF|AG||AY3AZEEE3
+:<END-SEND
+2011 08 15 16:48:20 : local_get() Reading response
+2011 08 15 16:48:30 : socket_bind() failed: reason: Address already in use
+
+2011 08 15 16:48:30 : GOT: 
+
+2011 08 15 16:48:30 : SIP2: Message from SC passed CRC check
+2011 08 15 16:52:06 : READY!
+2011 08 15 16:52:06 : socket_bind() failed: reason: Address already in use
+
+2011 08 15 16:58:28 : READY!
+2011 08 15 16:58:28 : socket_bind() failed: reason: Address already in use
+
+2011 08 15 16:59:16 : READY!
+2011 08 15 16:59:20 : socket_bind() failed: reason: Address already in use
+
+2011 08 15 17:00:38 : READY!
+2011 08 15 17:00:42 : socket_bind() failed: reason: Address already in use
+
+2011 08 15 17:12:21 : READY!
+2011 08 15 17:12:25 : socket_bind() failed: reason: Cannot assign requested address
+
+2011 08 15 17:15:08 : READY!
+2011 08 15 17:15:12 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:16:09 : READY!
+2011 08 15 17:16:13 : socket_bind() failed: reason: Address already in use
+
+2011 08 15 17:17:19 : READY!
+2011 08 15 17:17:23 : socket_bind() failed: reason: Address already in use
+
+2011 08 15 17:18:06 : READY!
+2011 08 15 17:18:10 : socket_bind() failed: reason: Address already in use
+
+2011 08 15 17:29:26 : READY!
+2011 08 15 17:29:30 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:29:30 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:29:30 : socket_accept() : Client #1: Connected.
+
+2011 08 15 17:29:30 : local_get() Reading response
+2011 08 15 17:29:38 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:29:38 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:29:38 : GOT: 
+2011 08 15 17:29:38 : SIP2: Message from SC passed CRC check
+2011 08 15 17:29:38 : local_get() Reading response
+2011 08 15 17:29:46 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:29:46 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:29:46 : GOT: 
+2011 08 15 17:29:46 : SIP2: Message from SC passed CRC check
+2011 08 15 17:29:46 : local_get() Reading response
+2011 08 15 17:29:54 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:29:54 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:29:54 : GOT: 
+2011 08 15 17:29:54 : SIP2: Message from SC passed CRC check
+2011 08 15 17:29:54 : local_get() Reading response
+2011 08 15 17:30:02 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:30:02 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:30:02 : GOT: 
+2011 08 15 17:30:02 : SIP2: Message from SC passed CRC check
+2011 08 15 17:30:02 : local_get() Reading response
+2011 08 15 17:30:10 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:30:10 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:30:10 : GOT: 
+2011 08 15 17:30:10 : SIP2: Message from SC passed CRC check
+2011 08 15 17:30:10 : local_get() Reading response
+2011 08 15 17:30:18 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:30:18 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:30:18 : GOT: 
+2011 08 15 17:30:18 : SIP2: Message from SC passed CRC check
+2011 08 15 17:30:18 : local_get() Reading response
+2011 08 15 17:30:26 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:30:26 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:30:26 : GOT: 
+2011 08 15 17:30:26 : SIP2: Message from SC passed CRC check
+2011 08 15 17:30:26 : local_get() Reading response
+2011 08 15 17:30:34 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:30:34 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:30:34 : GOT: 
+2011 08 15 17:30:34 : SIP2: Message from SC passed CRC check
+2011 08 15 17:30:34 : local_get() Reading response
+2011 08 15 17:30:42 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:30:42 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:30:42 : GOT: 
+2011 08 15 17:30:42 : SIP2: Message from SC passed CRC check
+2011 08 15 17:30:42 : local_get() Reading response
+2011 08 15 17:30:50 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:30:50 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:30:50 : GOT: 
+2011 08 15 17:30:50 : SIP2: Message from SC passed CRC check
+2011 08 15 17:30:50 : local_get() Reading response
+2011 08 15 17:30:58 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:30:58 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:30:58 : GOT: 
+2011 08 15 17:30:58 : SIP2: Message from SC passed CRC check
+2011 08 15 17:30:58 : local_get() Reading response
+2011 08 15 17:31:06 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:31:06 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:31:06 : GOT: 
+2011 08 15 17:31:06 : SIP2: Message from SC passed CRC check
+2011 08 15 17:31:06 : local_get() Reading response
+2011 08 15 17:31:14 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:31:14 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:31:14 : GOT: 
+2011 08 15 17:31:14 : SIP2: Message from SC passed CRC check
+2011 08 15 17:31:14 : local_get() Reading response
+2011 08 15 17:31:22 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:31:22 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:31:22 : GOT: 
+2011 08 15 17:31:22 : SIP2: Message from SC passed CRC check
+2011 08 15 17:31:22 : local_get() Reading response
+2011 08 15 17:31:30 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:31:30 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:31:30 : GOT: 
+2011 08 15 17:31:30 : SIP2: Message from SC passed CRC check
+2011 08 15 17:31:30 : local_get() Reading response
+2011 08 15 17:31:38 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:31:38 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:31:38 : GOT: 
+2011 08 15 17:31:38 : SIP2: Message from SC passed CRC check
+2011 08 15 17:31:38 : local_get() Reading response
+2011 08 15 17:31:46 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:31:46 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:31:46 : GOT: 
+2011 08 15 17:31:46 : SIP2: Message from SC passed CRC check
+2011 08 15 17:31:46 : local_get() Reading response
+2011 08 15 17:31:54 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:31:54 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:31:54 : GOT: 
+2011 08 15 17:31:54 : SIP2: Message from SC passed CRC check
+2011 08 15 17:31:54 : local_get() Reading response
+2011 08 15 17:32:02 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:32:02 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:32:02 : GOT: 
+2011 08 15 17:32:02 : SIP2: Message from SC passed CRC check
+2011 08 15 17:32:02 : local_get() Reading response
+2011 08 15 17:32:10 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:32:10 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:32:10 : GOT: 
+2011 08 15 17:32:10 : SIP2: Message from SC passed CRC check
+2011 08 15 17:32:10 : local_get() Reading response
+2011 08 15 17:32:18 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:32:18 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:32:18 : GOT: 
+2011 08 15 17:32:18 : SIP2: Message from SC passed CRC check
+2011 08 15 17:32:18 : local_get() Reading response
+2011 08 15 17:32:26 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:32:26 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:32:26 : GOT: 
+2011 08 15 17:32:26 : SIP2: Message from SC passed CRC check
+2011 08 15 17:32:26 : local_get() Reading response
+2011 08 15 17:32:34 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:32:34 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:32:34 : GOT: 
+2011 08 15 17:32:34 : SIP2: Message from SC passed CRC check
+2011 08 15 17:32:34 : local_get() Reading response
+2011 08 15 17:32:42 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:32:42 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:32:42 : GOT: 
+2011 08 15 17:32:42 : SIP2: Message from SC passed CRC check
+2011 08 15 17:32:42 : local_get() Reading response
+2011 08 15 17:32:50 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:32:50 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:32:50 : GOT: 
+2011 08 15 17:32:50 : SIP2: Message from SC passed CRC check
+2011 08 15 17:32:50 : local_get() Reading response
+2011 08 15 17:32:58 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:32:58 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:32:58 : GOT: 
+2011 08 15 17:32:58 : SIP2: Message from SC passed CRC check
+2011 08 15 17:32:58 : local_get() Reading response
+2011 08 15 17:33:13 : READY!
+2011 08 15 17:33:17 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:33:17 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:33:17 : socket_accept() : Client #1: Connected.
+
+2011 08 15 17:33:17 : local_get() Reading response
+2011 08 15 17:33:25 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:33:25 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:33:25 : GOT: 
+2011 08 15 17:33:25 : SIP2: Message from SC passed CRC check
+2011 08 15 17:33:25 : local_get() Reading response
+2011 08 15 17:33:33 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:33:33 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:33:33 : GOT: 
+2011 08 15 17:33:33 : SIP2: Message from SC passed CRC check
+2011 08 15 17:33:33 : local_get() Reading response
+2011 08 15 17:33:41 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:33:41 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:33:41 : GOT: 
+2011 08 15 17:33:41 : SIP2: Message from SC passed CRC check
+2011 08 15 17:33:41 : local_get() Reading response
+2011 08 15 17:33:49 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:33:49 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:33:49 : GOT: 
+2011 08 15 17:33:49 : SIP2: Message from SC passed CRC check
+2011 08 15 17:33:49 : local_get() Reading response
+2011 08 15 17:33:57 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:33:57 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:33:57 : GOT: 
+2011 08 15 17:33:57 : SIP2: Message from SC passed CRC check
+2011 08 15 17:33:57 : local_get() Reading response
+2011 08 15 17:34:05 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:34:05 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:34:05 : GOT: 
+2011 08 15 17:34:05 : SIP2: Message from SC passed CRC check
+2011 08 15 17:34:05 : local_get() Reading response
+2011 08 15 17:34:45 : READY!
+2011 08 15 17:34:45 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:34:45 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:34:45 : socket_accept() : Client #1: Connected.
+
+2011 08 15 17:34:45 : local_get() Reading response
+2011 08 15 17:34:49 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:34:49 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:34:49 : GOT: 
+2011 08 15 17:34:49 : SIP2: Message from SC passed CRC check
+2011 08 15 17:34:49 : local_get() Reading response
+2011 08 15 17:34:53 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:34:53 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:34:53 : GOT: 
+2011 08 15 17:34:53 : SIP2: Message from SC passed CRC check
+2011 08 15 17:34:53 : local_get() Reading response
+2011 08 15 17:34:57 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:34:57 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:34:57 : GOT: 
+2011 08 15 17:34:57 : SIP2: Message from SC passed CRC check
+2011 08 15 17:34:57 : local_get() Reading response
+2011 08 15 17:35:01 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:35:01 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:35:01 : GOT: 
+2011 08 15 17:35:01 : SIP2: Message from SC passed CRC check
+2011 08 15 17:35:01 : local_get() Reading response
+2011 08 15 17:35:52 : READY!
+2011 08 15 17:35:52 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:35:52 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:35:52 : socket_accept() : Client #1: Connected.
+
+2011 08 15 17:35:52 : local_get() Reading response
+2011 08 15 17:35:56 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:35:56 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:35:56 : GOT: 
+2011 08 15 17:35:56 : SIP2: Message from SC passed CRC check
+2011 08 15 17:35:56 : local_get() Reading response
+2011 08 15 17:36:00 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:36:00 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:36:00 : GOT: 
+2011 08 15 17:36:00 : SIP2: Message from SC passed CRC check
+2011 08 15 17:36:00 : local_get() Reading response
+2011 08 15 17:36:04 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:36:04 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:36:04 : GOT: 
+2011 08 15 17:36:04 : SIP2: Message from SC passed CRC check
+2011 08 15 17:36:04 : local_get() Reading response
+2011 08 15 17:36:08 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:36:08 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:36:08 : GOT: 
+2011 08 15 17:36:08 : SIP2: Message from SC passed CRC check
+2011 08 15 17:36:08 : local_get() Reading response
+2011 08 15 17:36:12 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:36:12 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:36:12 : GOT: 
+2011 08 15 17:36:12 : SIP2: Message from SC passed CRC check
+2011 08 15 17:36:12 : local_get() Reading response
+2011 08 15 17:36:16 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:36:16 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:36:16 : GOT: 
+2011 08 15 17:36:16 : SIP2: Message from SC passed CRC check
+2011 08 15 17:36:16 : local_get() Reading response
+2011 08 15 17:36:35 : READY!
+2011 08 15 17:36:35 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:36:35 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:36:35 : socket_accept() : Client #1: Connected.
+
+2011 08 15 17:36:35 : local_get() Reading response
+2011 08 15 17:37:44 : READY!
+2011 08 15 17:37:44 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:37:44 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:37:44 : socket_accept() : Client #1: Connected.
+
+2011 08 15 17:37:44 : local_get() Reading response
+2011 08 15 17:40:25 : READY!
+2011 08 15 17:40:25 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:40:25 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:40:25 : socket_accept() : Client #1: Connected.
+
+2011 08 15 17:40:25 : local_get() Reading response
+2011 08 15 17:40:45 : READY!
+2011 08 15 17:40:45 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:40:45 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:40:45 : socket_accept() : Client #1: Connected.
+
+2011 08 15 17:40:45 : local_get() Reading response
+2011 08 15 17:42:09 : READY!
+2011 08 15 17:42:09 : socket_create() failed: reason: Protocol not supported
+
+2011 08 15 17:42:37 : READY!
+2011 08 15 17:42:37 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:44:28 : READY!
+2011 08 15 17:44:28 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:47:03 : READY!
+2011 08 15 17:47:03 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:51:50 : READY!
+2011 08 15 17:51:50 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 17:58:12 : READY!
+2011 08 15 17:58:12 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 18:00:53 : READY!
+2011 08 15 18:00:53 : Socket 192.168.2.10:8002 has been opened
+
+2011 08 15 18:05:54 : READY!
+2011 08 15 18:05:54 : Socket 192.168.2.10:8002 has been opened

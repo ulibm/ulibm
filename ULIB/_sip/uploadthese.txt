@@ -1,0 +1,2 @@
+root/mainmenu.php
+ALTER TABLE  `media_type` ADD  `sip_sec_marker` VARCHAR( 2 ) NOT NULL DEFAULT  '00';
