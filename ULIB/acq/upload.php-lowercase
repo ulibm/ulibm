@@ -1,0 +1,99 @@
+<?php
+//error_reporting(E_ALL ~ E_NOTICE);
+include("c.inc.php");
+include("head.php");
+//mn_lib();
+require_once 'excel_reader2.php';
+if ($uploaded!="yes") {
+?><table width="500" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
+<tr>
+<form action="upload.php" method="post" enctype="multipart/form-data" name="form1" id="form1">
+<INPUT type="hidden" name="uploaded" value="yes">
+<td>
+<table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#FFFFFF">
+<tr>
+<td><strong>Excel Upload </strong></td>
+</tr>
+<tr>
+<td>Select file 
+<input name="ufile" type="file" id="ufile" size="50" /></td>
+</tr>
+<tr>
+<td align="center"><input type="submit" name="Submit" value="Upload" /></td>
+</tr>
+</table>
+</td>
+</form>
+</tr>
+</table><?
+	die;
+}
+if ($uploaded=="yes") {
+
+//set where you want to store files
+//in this example we keep file in folder upload 
+//$_FILES['ufile']['name']; = upload file name
+//for example upload file name cartoon.gif . $path will be upload/cartoon.gif
+$ext=explode(".",$_FILES['ufile']['name']);
+//print_r($ext);
+$ext=$ext[count($ext)-1];
+$name="xls.".$ext;
+//die($ext);
+$path= "_tmp/".$name;
+if($ufile !=none)
+{
+if(copy($_FILES['ufile']['tmp_name'], $path))
+{
+echo "<BR><BR><CENTER>Successful<BR/>";
+
+//$_FILES['ufile']['name'] = file name
+//$_FILES['ufile']['size'] = file size
+//$_FILES['ufile']['type'] = type of file
+echo "File Name :".$_FILES['ufile']['name']."<BR/>"; 
+echo "File Size :".$_FILES['ufile']['size']."<BR/>"; 
+echo "File Type :".$_FILES['ufile']['type']."<BR/></CENTER>"; 
+//echo "<img src=\"$path\" width=\"150\" height=\"150\">";
+}
+else
+{
+echo "Upload fail Error";
+die;
+}
+}
+}
+
+
+$data = new Spreadsheet_Excel_Reader($path,false,"tis620");
+
+
+$sheet_index=0;
+$row=$data->rowcount($sheet_index);
+$col=$data->colcount($sheet_index);
+$sh=count($data->sheets);
+//print_r($data->sheets);
+
+echo "[$row,$col]-$sh ";
+$alldata="";
+for ($si=0;$si<$sh;$si++) {
+	$alldata="$alldata
+##SHEET.NUMBER$si
+";
+	for ($ri=0;$ri<=$row;$ri++) {
+		$dat="";
+		for ($ci=0;$ci<=$col;$ci++) {
+			$dat=$dat."||".$data->val($ri,$ci,$si);
+		}
+		//echo "$dat<HR>";
+		$alldata="$alldata
+	$dat";
+	}
+}
+$now=time();
+//print_r($_SESSION);
+tmq("insert into data set name='".addslashes($_FILES['ufile']['name'])."',dt=$now,dat='".addslashes($alldata)."',loginid='$_tmid';");
+//echo $data->dump(true,true); 
+/*?><PRE><? echo $alldata;?></PRE><?*/
+
+?><CENTER><H1>ดำเนินการเรียบร้อย</H1></CENTER>
+</body>
+</html>
